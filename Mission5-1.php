@@ -4,9 +4,9 @@ $eComment = "";
 $ePassword = "";
 $edit = "";
 //MySqlへの接続
-$dsn = 'データベース名';
-$user = 'ユーザー名';
-$password = 'ユーザー名';
+$dsn = 'mysql:dbname=tb240544db;host=localhost';
+$user = 'tb-240544';
+$password = '5ykNNuyHWN';
 $pdo = new PDO($dsn, $user, $password, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING));
     $sql = "CREATE TABLE IF NOT EXISTS mdata"
     ."("
@@ -145,7 +145,7 @@ if(isset($_POST["submit1"]) && isset($_POST["hide"])){
     </head>
     <body>
       <form action="" method="post">
-        <input type="text" name="hide" value="<?php if($_POST["edit"] != 0){
+        <input type="hidden" name="hide" value="<?php if($_POST["edit"] != 0){
         echo $_POST["edit"];}?>">
         <input type="text" name="name" placeholder="名前" value="<?php echo $eName?>">
         <input type="text" name="comment" placeholder="コメント" value="<?php echo $eComment?>">
